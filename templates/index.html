@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Diabetes Prediction</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="{{ url_for('static', filename='bootstrap/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+    type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{{ url_for('static', filename='bootstrap/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <style>
+    @-webkit-keyframes rightrow {
+      0% {
+        -webkit-transform: translateX(0);
+        opacity: 0.4
+      }
+
+      100% {
+        -webkit-transform: translateX(0.4em);
+        opacity: 0.9
+      }
+    }
+
+    .rightrrow {
+      -webkit-animation: rightrow 0.6s infinite alternate ease-in-out;
+    }
+
+    .btn-cek {
+      background-image:
+        linear-gradient(to top right, #00bcd4 15%, #00acc1 85%);
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .title {
+      color: #333;
+    }
+
+    .img-back {}
+
+    body {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <div class="container">
+      <br><br>
+      <center class="title">
+        <h1>Diabetes Prediction</h1>
+        <span>Fill all form with validate data</span>
+      </center>
+      <br><br>
+      <div class="row">
+        <div class="col-6">
+          <img class="img-back" src="{{ url_for('static', filename='001.png') }}" alt="">
+        </div>
+        <div class="col-6">
+          <form action="http://127.0.0.1:5000/predict" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Age</label>
+                <input name="age" type="text" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Insulin</label>
+                <input name="ins" type="text" class="form-control" id="inputPassword4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Pregnancies</label>
+                <input name="pg" type="text" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputPassword4">BMI</label>
+                <input name="bmi" type="text" class="form-control" id="inputPassword4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Glucose</label>
+                <input name="gl" type="text" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Diabetes Pedigree Function</label>
+                <input name="dpf" type="text" class="form-control" id="inputPassword4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Blood Pressure</label>
+                <input name="bp" type="text" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Skin Thickness</label>
+                <input name="st" type="text" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <button style="width:100%" type="submit" class="btn btn-cek">Check Result <i
+                class="fa fa-arrow-right rightrrow"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{ url_for('static', filename='bootstrap/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{{ url_for('static', filename='bootstrap/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{{ url_for('static', filename='bootstrap/js/sb-admin-2.min.js') }}"></script>
+
+  <!-- Page level plugins -->
+  <script src="{{ url_for('static', filename='bootstrap/vendor/chart.js/Chart.min.js') }}"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{{ url_for('static', filename='bootstrap/js/demo/chart-area-demo.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/demo/chart-pie-demo.js') }}"></script>
+
+</body>
+
+</html>
